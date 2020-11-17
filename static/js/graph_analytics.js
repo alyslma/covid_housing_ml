@@ -614,7 +614,7 @@ function plotBubbleCounty(state, county) {
                 color = "royalblue";
             }
             // One small note. We're creating a single trace here, to which
-            // the frames will pass data for the different years. It's
+            // the frames will pass data for the different months. It's
             // subtle, but to avoid data reference problems, we'll slice
             // the arrays to ensure we never write any new data into our
             // lookup table:
@@ -631,11 +631,17 @@ function plotBubbleCounty(state, county) {
                     sizemode: 'area',
                     sizeref: 500,
                     color: color
-                }
+                },
+                hovertemplate:
+                "<b>%{text}</b><br><br>" +
+                "%{yaxis.title.text}: %{y:.2%}<br>" + // CHECK!
+                "%{xaxis.title.text}: %{x}<br>" +
+                "Property value: %{marker.size:$,f}<br>" +
+                "<extra></extra>",
             });
         }
 
-        // Create a frame for each year. Frames are effectively just
+        // Create a frame for each month. Frames are effectively just
         // traces, except they don't need to contain the *full* trace
         // definition (for example, appearance). The frames just need
         // the parts the traces that change (here, the data).

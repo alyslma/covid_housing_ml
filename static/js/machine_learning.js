@@ -69,12 +69,6 @@ function plotScatterCounty(state, county) {
                     title:"Interest rates"
                 }
             },
-
-            // hovertemplate:
-            //     "<b>%{text}</b><br><br>" +
-            //     "%{yaxis.title.text}: %{y:.2%}<br>" + // CHECK!
-            //     "%{xaxis.title.text}: %{x:.2f}<br>" +
-            //     "<extra></extra>",
         }];
 
         var layout = {
@@ -140,9 +134,6 @@ function plotMachineCounty(state, county) {
 
         var mse = plotData.MSEValue.toFixed(3);
         var r2 = plotData.r2.toFixed(3);
-
-        console.log(mse);
-        console.log(r2);
 
         var x_values = [2021, 2022, 2023, 2024];
         var y_values_250_list = [];
@@ -215,6 +206,7 @@ function plotMachineCounty(state, county) {
             xaxis: {
                 title: "Year",
                 gridcolor: '#ffff',
+                tickmode: 'linear'
             },
             yaxis: {
                 title: "Predicted property value",
