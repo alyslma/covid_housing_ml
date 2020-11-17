@@ -72,47 +72,45 @@
   <br>
 
 
-  <div class="row">
+  <div class="row" style="text-align:center;">
     <div class="col-md-2">
       <div class="well">
         <h5 style="color: teal; font-size: 18px">State:</h5>
         <select id="selDataset" style="font-size: 13px" onchange="optionChanged(this.value)"></select>
-        <br>
-        <br>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="well">
         <h5 style="color: teal; font-size: 18px">County:</h5>
         <select id="selCountyDataset" style="font-size: 13px" onchange="countyChanged(this.value)"></select>
       </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-s-12  col-md-6">
-      <div id="scatter-county">
-        <!-- We append our chart here. -->
+  
+      <div class="col-s-12 col-md-10 offset-md-2 col-xl-6">
+        <div id="scatter-county">
+          <!-- We append our chart here. -->
+        </div>
       </div>
+      <div class="col-s-12 col-md-10 offset-md-2 col-xl-6">
+        <div id="machine-county">
+          <!-- We append our chart here. -->
+        </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-s-12  col-md-6">
-      <div id="machine-county">
-        <!-- We append our chart here. -->
+    <div class="row">
+      <div class ="col-s-6 col-md-2 col-lg-2">
       </div>
+      <div class="col-s-6 col-md-2 col-lg-3" style="text-align: center;">
+        <h3 class="panel-title" style="display:inline">MSE Value </h3>
+        <div id="mseValue" style="color: teal; display:inline"></div>
+      </div>
+      <div class="col-s-6 col-md-2 col-lg-3" style="text-align: center;">
+        <h3 class="panel-title" style="display:inline">R2 </h3>
+        <div id="rSquared" style="color: teal; display:inline"></div>
+      </div>  
     </div>
-  </div>
 
-  <div class="row">
-    <div class ="col-s-6 col-md-2">
-    </div>
-    <div class="col-s-6 col-md-2">
-      <h3 class="panel-title">MSE Value</h3>
-      <div id="mseValue" style="color: teal;"></div>
-    </div>
-    <div class="col-s-6 col-md-2">
-      <h3 class="panel-title">R2</h3>
-      <div id="rSquared" style="color: teal;"></div>
-    </div>  
-  </div>
 
 <br>
 <br>

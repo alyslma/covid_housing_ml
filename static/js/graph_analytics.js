@@ -180,9 +180,6 @@ function plotAndInfo(state) {
             stateInfo.append().text(stateData[0].Deaths);
             propInfo.append().text((stateData[0].Change * 100).toFixed(2) + "%");
 
-            // Object.entries(newStateData).forEach((info) => {
-            //     demoInfo.append("p").text(`${info[0]}: ${info[1]}`);
-            // });
         })
     })
 }
@@ -294,7 +291,7 @@ function plotLineGraph(state) {
                 zeroline: false,
             },
             plot_bgcolor: 'rgba(240,240,240, 0.95)',
-            title: `Change in property value vs cummulative COVID cases & deaths in ${state} (Feb-Sep 2020)`,
+            title: `Change in property value vs cumulative COVID cases & deaths in ${state} (Feb-Sep 2020)`,
             autosize: false,
             width: 900,
             height: 500,
@@ -468,7 +465,7 @@ function plotBubble(state) {
         var layout = {
             xaxis: {
                 title: 'COVID cases per 1000',
-                range: [0, Math.max(...y_values_cases)+3]
+                range: [0, Math.max(...y_values_cases)+4]
             },
             yaxis: {
                 title: 'Monthly percent change in property value',
@@ -829,7 +826,7 @@ function countyChanged(county) {
                         x: x_values,
                         y: y_values_value,
                         type: 'lines+markers',
-                        name: 'Percent % in property value',
+                        name: '% change in property value',
                         yaxis: 'y1',
                         line: {
                             color: 'rgb(210,50,45)',
@@ -889,7 +886,7 @@ function countyChanged(county) {
                             zeroline: false
                         },
                         plot_bgcolor: 'rgba(240,240,240, 0.95)',
-                        title: `Change in property value vs cummulative COVID cases & deaths in ${state} (Feb-Sep 2020)`,
+                        title: `Change in property value vs cumulative COVID cases & deaths in ${county}, ${state} (Feb-Sep 2020)`,
                         autosize: false,
                         width: 900,
                         height: 500,
@@ -926,7 +923,6 @@ function countyChanged(county) {
                                 data: [{ 'line.dash': '1500px 0px' },
                                 { 'line.dash': '1500px 0px' },
                                 { 'line.dash': '1500px 0px' },
-                                { 'line.dash': '1500px 0px' }
                                 ]
                             }],
                             {

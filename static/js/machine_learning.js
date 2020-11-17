@@ -138,8 +138,8 @@ function plotMachineCounty(state, county) {
         plotData = plotData[0];
         console.log(plotData);
 
-        var mse = plotData.MSEValue;
-        var r2 = plotData.r2;
+        var mse = plotData.MSEValue.toFixed(3);
+        var r2 = plotData.r2.toFixed(3);
 
         console.log(mse);
         console.log(r2);
@@ -225,7 +225,7 @@ function plotMachineCounty(state, county) {
                 ticklen: 4
             },
             plot_bgcolor: 'rgba(240,240,240, 0.95)',
-            title: `${county}, ${state} predicted property values`,
+            title: `${county}, ${state} predicted property values at different interest rates`,
             autosize: false,
             width: 900,
             height: 500,

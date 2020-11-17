@@ -9,7 +9,6 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 import pandas as pd
-# import numpy as np
 
 from flask import Flask, jsonify, render_template
 
@@ -52,10 +51,6 @@ def analytics():
 @app.route("/documentation")
 def documentation():
     return render_template("Documentation.html")
-
-@app.route("/map")
-def news():
-    return render_template("Map.html")
 
 @app.route("/table")
 def table():
@@ -335,6 +330,7 @@ def sklearn_county(state, county):
     r2 = model.score(X_test,y_test)
     coeff = model.coef_[0]
     print(coeff)
+
     # predict four years at various interest rates
     start = max(ts_value)
 
@@ -352,9 +348,7 @@ def sklearn_county(state, county):
     y_future_450 = model.predict(X_future_450).tolist()
     y_future_500 = model.predict(X_future_500).tolist()
 
-    # /// the idea here would be to plot the predictions
-    # /// y_future_... on the y-axis and the years 2021, 2022, 2023, 2024 on the x-axis
-    # /// scatter plot with lines and markers
+    # plot the predictions: y_future_... on the y-axis and the years 2021, 2022, 2023, 2024 on the x-axis
     giveMeY = [{'y_future_250':y_future_250,'y_future_300':y_future_300, 'y_future_350':y_future_350, 'y_future_400':y_future_400, 'y_future_450':y_future_450, 'y_future_500':y_future_500, 'r2':r2, 'MSEValue':MSE}]
     
     return jsonify(giveMeY)
