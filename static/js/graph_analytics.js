@@ -411,7 +411,7 @@ function plotBubble(state) {
         for (i = 0; i < unique_counties.length; i++) {
             var data = firstYear[unique_counties[i]];
             // One small note. We're creating a single trace here, to which
-            // the frames will pass data for the different years. It's
+            // the frames will pass data for the different months. It's
             // subtle, but to avoid data reference problems, we'll slice
             // the arrays to ensure we never write any new data into our
             // lookup table:
@@ -426,12 +426,17 @@ function plotBubble(state) {
                     size: data.marker.size.slice(),
                     sizemode: 'area',
                     sizeref: 500,
-                    // color: "royalblue"
-                }
+                },
+                hovertemplate:
+                "<b>%{text}</b><br><br>" +
+                "%{yaxis.title.text}: %{y:.2%}<br>" + // CHECK!
+                "%{xaxis.title.text}: %{x}<br>" +
+                "Property value: %{marker.size:$,f}<br>" +
+                "<extra></extra>",
             });
         }
 
-        // Create a frame for each year. Frames are effectively just
+        // Create a frame for each month. Frames are effectively just
         // traces, except they don't need to contain the *full* trace
         // definition (for example, appearance). The frames just need
         // the parts the traces that change (here, the data).
@@ -465,7 +470,7 @@ function plotBubble(state) {
         var layout = {
             xaxis: {
                 title: 'COVID cases per 1000',
-                range: [0, Math.max(...y_values_cases)+4]
+                range: [0, Math.max(...y_values_cases)+3]
             },
             yaxis: {
                 title: 'Monthly percent change in property value',
@@ -664,7 +669,7 @@ function plotBubbleCounty(state, county) {
         var layout = {
             xaxis: {
                 title: 'COVID cases per 1000',
-                range: [0, Math.max(...y_values_cases)+0.5]
+                range: [0, Math.max(...y_values_cases)+3]
             },
             yaxis: {
                 title: 'Monthly Percent Change in Property Value',
