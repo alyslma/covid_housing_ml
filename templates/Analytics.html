@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Housing Analytics</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="static/img/favicon.png" rel="icon">
+    <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!--Dependencies-->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Vendor CSS Files -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="static/vendor/owl.carousel/static/owl.carousel.min.css" rel="stylesheet">
+    <link href="static/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="static/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="static/css/d3style.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex">
+
+            <div class="logo mr-auto">
+                <h1 class="text-light"><a href="/">LAK</a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="static/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/documentation">Documentation</a></li>
+                    <li><a href="/aboutus">About Us</a></li>
+                    <li class="drop-down"><a href="/analytics">Analytics</a>
+                        <ul>
+                            <li class="active"><a href="/analytics">Housing Analytics</a></li>
+                            <li><a href="/predictions">Predictions</a></li>
+                            <li><a href="/table">Table</a></li>
+                            <li><a href="/map">Maps</a></li>
+                        </ul>
+            </nav><!-- .nav-menu -->
+
+        </div>
+    </header><!-- End Header -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="little-padding">
+            <div class="col-md-2">
+                <div class="well">
+                    <h5 style="color: teal; font-size: 18px">State:</h5>
+                    <select id="selDataset" style="font-size: 13px" onchange="optionChanged(this.value)"></select>
+                    <br>
+                    <br>
+                    <h5 style="color: teal; font-size: 18px">County:</h5>
+                    <select id="selCountyDataset" style="font-size: 13px" onchange="countyChanged(this.value)"></select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="panel panel-primary" style="vertical-align: middle;">
+                <div class="panel-heading">
+                    <h3 id="sample-metadata-heading" class="panel-title"></h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Cumulative COVID cases (as of Sep 30)</h3>
+                </div>
+                <div id="sample-metadata" class="panel-body" style="color: teal;"></div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Cumulative COVID deaths (as of Sep 30)</h3>
+                </div>
+                <div id="more-state-data" class="panel-body" style="color: teal;"></div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <form class="signPanel">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Property value percent change (Jan to Sep 2020)</h3>
+                    </div>
+                    <div id="property-state-data" class="panel-body" style="color: teal;"></div>
+                </div>
+        </div>
+    </div>
+    </form>
+    <div class="row">
+        <div class="col-xs-12  col-md-10">
+            <div id="line-state">
+                <!-- We append our chart here. -->
+            </div>
+        </div>
+
+        <div class="col-xs-12  col-md-10">
+            <div id="scatter-state">
+                <p style="text-align:center; font-style: italic">*Please note some counties do not have COVID data
+                    available</p>
+                <!-- We append our chart here. -->
+            </div>
+        </div>
+    </div>
+    <div class="col-s-12  col-md-6">
+        <div id="bubble-state" style="height: 750px; width: fit-content">
+            <!-- We append our chart here. -->
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.js"></script>
+    <script src="{{ url_for('static', filename='js/graph_analytics.js') }}"></script>
+
+</body>
+
+</html>
