@@ -5,6 +5,7 @@
 
 ## Deployment
 Website deployed on [Heroku](https://covid-housing.herokuapp.com/)  
+
 (Previous version also deployed on [Heroku](https://housing-covid.herokuapp.com/))
 
 ## Data Sources
@@ -12,9 +13,6 @@ Website deployed on [Heroku](https://covid-housing.herokuapp.com/)
 - Number of COVID cases and deaths at the state and county level from [New York Times](https://github.com/nytimes/covid-19-data)
 - Census data to standardize COVID data per population from [Census.gov](https://www.census.gov/data.html)
 - Mortgage rates data taken from [FreddieMac](http://www.freddiemac.com/pmms/pmms_archives.html)
-
-## Data Manipulation
-- 
 
 ## Visualizations
 "Housing Analysis" page:
