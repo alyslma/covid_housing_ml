@@ -1,4 +1,7 @@
 # Property Values & COVID-19, Interest Rates
+
+![homepage](static/img/homepage.jpg)
+
 ## Purpose
 - To examine the impact of COVID on property values within the nation
 - To practice machine learning concepts by predicting property value prices based on interest rate
