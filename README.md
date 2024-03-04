@@ -7,9 +7,7 @@
 - To practice machine learning concepts by predicting property value prices based on interest rate
 
 ## Deployment
-Website deployed on [Heroku](https://covid-housing.herokuapp.com/)  
-
-(Previous version also deployed on [Heroku](https://housing-covid.herokuapp.com/))
+Website previously deployed on [Heroku](https://covid-housing.herokuapp.com/)  
 
 ## Data Sources
 - Property value data from January to September 2020 from [Zillow](https://www.zillow.com/research/data/)
